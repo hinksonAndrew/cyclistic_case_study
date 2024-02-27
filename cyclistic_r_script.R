@@ -120,14 +120,17 @@ all_trips_v2 %>%
   scale_y_continuous(labels = scales::comma) +
   labs(
     title = "Number of Rides each Weekday",
-    x = "Weekday"
+    subtitle = "Rides in 2023",
+    caption = "Created using ggplot",
+    x = "Weekday", y = "Number of Rides",
+    fill = "Rider Type"
   )
 
 # Visualization for average duration
 all_trips_v2 %>%
   mutate(weekday = wday(started_at, label = TRUE)) %>%
   group_by(member_casual, weekday) %>%
-  summarise(number_of_rides = n(), average_duration = mean(ride_length)) %>%
+  summarise(number_of_rides = n(), average_duration = mean(ride_length)/60) %>%
   arrange(member_casual, weekday) %>%
   ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +
   geom_col(position = "dodge")
