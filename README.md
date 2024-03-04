@@ -12,9 +12,13 @@ With an in depth analysis of bike rentals for the year 2023, we can determine th
 
 ### Visualizations
 Visualization of the number of rides by rider type each weekday
+
 ![number of rides each weekday](number_of_rides_each_weekday.jpeg)
+
+
 Visualization of the average ride length per weekday
-![average ride length per weekday](average_duration_per_weekday.jpeg)
+
+![average ride length per weekday](average_duration_per_weekday.jpeg)  
 
 ### Observations
 * Members ride more frequently Monday through Friday on average compared to casual riders who are more active on the weekends. 
