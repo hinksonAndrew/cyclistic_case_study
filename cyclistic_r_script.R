@@ -133,7 +133,15 @@ all_trips_v2 %>%
   summarise(number_of_rides = n(), average_duration = mean(ride_length)/60) %>%
   arrange(member_casual, weekday) %>%
   ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +
-  geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  labs(
+    title = "Average Duration per Weekday",
+    subtitle = "Rides in 2023",
+    caption = "Created using ggplot",
+    x = "Weekday", y = "Average Duration in Minutes",
+    fill = "Rider Type"
+  )
+  
 
 #
 # Export Summary File for further analysis
